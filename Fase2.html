@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <title>Exercici 4 Javascript - Fase2</title>
+  </head>
+  <body>
+    <h1>Restaurant Menu</h1>
+    <input type="button" onclick="Carta_restaurant()" value="Generate Menu"/>
+    <p id="menu"></p>
+    <p id="dish1"></p>
+    <p id="dish2"></p>
+    <p id="dish3"></p>
+    <p id="dish4"></p>
+    <p id="dish5"></p>
+    <input type="button" onclick="generate_order()" value="Generate Order"/>
+    <p id="order"></p>
+
+    <script>
+      function Carta_restaurant(){
+          let bill_5 = 5;
+          let bill_10 = 10;
+          let bill_20 = 20;
+          let bill_50 = 50;
+          let bill_100 = 100;
+          let bill_200 = 200;
+          let bill_500 = 500;
+          let total_price = 0;
+          let menu = new Array;
+          let dish_price = new Array;
+
+          for (i=0; i<5; i++){
+            menu.push(prompt("Please add dish nº" + (i+1)));
+            dish_price.push(prompt("Please add dish price nº" + (i+1)));
+          }
+          document.getElementById("menu").innerHTML = "Restaurant Menu";
+          document.getElementById("dish1").innerHTML = menu[0] + " - " + dish_price[0] + " euros.";
+          document.getElementById("dish2").innerHTML = menu[1] + " - " + dish_price[1] + " euros.";
+          document.getElementById("dish3").innerHTML = menu[2] + " - " + dish_price[2] + " euros.";
+          document.getElementById("dish4").innerHTML = menu[3] + " - " + dish_price[3] + " euros.";
+          document.getElementById("dish5").innerHTML = menu[4] + " - " + dish_price[4] + " euros.";
+      }
+      function generate_order() {
+      let order = new Array;
+      let seguir = 0;
+      do {
+        order.push(prompt("What would you like to eat?"));
+        seguir = parseInt(prompt("Would you like to order more dishes? 1=YES, 0=NO"));
+      } while (seguir === 1) {
+        }
+        alert("You have finished your order");
+        
+      document.getElementById("order").innerHTML = "You have ordered the following dishes: " + order;
+    }
+        </script>
+  </body>
+</html>
